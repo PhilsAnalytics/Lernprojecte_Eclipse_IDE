@@ -1,0 +1,20 @@
+public class Kontostand {
+
+	/*
+	 * Beispiel für eine Kaskade Ausgabe soll einer der drei Möglichkeiten sein:
+	 * "... € im Haben "... € ausgeglichen "... € im Soll
+	 */
+	public static void main(String[] args) {
+
+		int kontostand = 100;
+		System.out.print("Das Konto ist mit " + kontostand + " € ");
+		if (kontostand < 0)
+			System.out.println("Im Haben");
+		else if (kontostand == 0)
+			System.out.println("ausgeglichen");
+		else if (kontostand > 0)
+			System.out.println("im Soll");
+
+	}
+
+}
