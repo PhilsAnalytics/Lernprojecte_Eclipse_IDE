@@ -1,0 +1,18 @@
+public class BetragElse {
+
+	public static void main(String[] args) {
+
+		int zahl = 5;
+		int betrag;
+
+		// Zweiseitig bedingte Anweisung
+
+		if (zahl >= 0) {
+			betrag = zahl;
+		} else {
+			betrag = -zahl;
+		}
+
+		System.out.println("Der Betrag von " + zahl + " ist " + betrag);
+	}
+}
