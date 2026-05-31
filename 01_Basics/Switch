@@ -1,0 +1,33 @@
+public class ZahlenInBuchstaben {
+
+	public static void main(String[] args) {
+
+		// Aufgabe: Kaskade in Switch
+
+		int a = 6;
+
+		switch (a) {
+		case 1:
+			System.out.println("eins");
+			break;
+		case 2:
+			System.out.println("zwei");
+			break;
+		case 3:
+			System.out.println("drei");
+			break;
+		case 4:
+			System.out.println("vier");
+			break;
+		case 5:
+			System.out.println("fünf");
+			break;
+		default:
+
+			// Fallback
+
+			System.out.println("Die Zahl " + a + " ist außerhalb des Bereichs.");
+			break;
+		}
+	}
+}
