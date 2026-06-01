@@ -1,0 +1,25 @@
+
+public class AllgemeinePotenz {
+
+	/*
+	 * Implementieren Sie ein Projekt mit gleichnamiger Klasse "AllgemeinePotenz",
+	 * in der Sie für vorgegebene Basis u. Exponent Basis hoch Exponent berechnen.
+	 * Benutzen Sie dafür die Infix-Notation! Für basis=3, expo=5 soll z.B. die
+	 * Ausgabe lauten: 3 hoch 1 ist 3, 3 hoch 2 ist 9, … 3 hoch 5 ist …
+	 */
+
+	public static void main(String[] args) {
+
+		int basis = 3;
+		int expo = 5;
+
+		int ergebnis = 1;
+
+		for (int i = 1; i <= expo; i++) {
+
+			ergebnis = ergebnis * basis;
+
+			System.out.println(basis + " hoch " + i + " ist " + ergebnis);
+		}
+	}
+}
