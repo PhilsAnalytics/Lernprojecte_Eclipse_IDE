@@ -1,0 +1,104 @@
+/*
+	 * Berechnen Sie das mit einer while-Schleife. Benutzen Sie die Variablen: -
+	 * startWert - grenzWert - aktuWert - hwz "startWert" u. "grenzWert" sollen als
+	 * double-Variablen für den Benutzer zugänglich sein, nicht hingegen "aktuWert"
+	 * als double sowie "hwz" als int. Formulieren Sie einen Frage- u. einen
+	 * Antwortsatz! Aufgaben: 1. Implementieren Sie mit einer while-Schleife!
+	 */
+
+	public static void main(String[] args) {
+
+		double startWert = 1.0;
+		double grenzWert = 0.1;
+		double aktuWert = startWert;
+		int hwz = 0;
+
+		System.out
+				.println("Frage: Wie viele Halbwertszeiten vergehen,\nbis die Menge unter " + grenzWert + " sinkt?\n");
+
+		while (aktuWert >= grenzWert) {
+
+			aktuWert /= 2.0;
+			hwz++;
+			System.out.println("Nach " + hwz + " HWZ: " + aktuWert);
+		}
+		System.out.println("\nAntwort: Nach " + hwz + " HWZ(s) sinkt die Menge \nerstmals unter den Grenzwert.");
+	}
+}
+
+//***************************************************************************************************************
+
+public class RadioaktiverZerfallV2 {
+	/*
+	 * Aufgaben: 2. Führen Sie eine "Zwischenvariante" ein, die prüft, ob nicht der
+	 * Sonderfall gegeben ist, dass schon zu Beginn der Startwert unter dem
+	 * Grenzwert liegt. In einem solchen Fall wäre die Ausgabe "unschön": Die
+	 * Fragestellung bliebe gleich, die Rechnung bliebe leer u. als Antwort würde
+	 * gesagt, es dauere Null Halbwertszeiten. Um das zu verhindern, prüfen Sie vor
+	 * Betreten der Schleife mit einer zweiseitigen bed. Anw., ob der Sonderfall
+	 * gegeben ist. Falls ja, soll weder die Berechnung noch die Antwort für den
+	 * regulären Fall ausgegeben werden, sondern stattdessen eine entsprechende
+	 * Meldung: "Schon zu Beginn liegt der Startwert unter dem Grenzwert".
+	 */
+  
+	public static void main(String[] args) {
+
+		double startWert = 1.0;
+		double grenzWert = 0.1;
+
+		System.out.println("Frage: Wie viele Halbwertszeiten vergehen,\nbis die Menge unter " + grenzWert + " sinkt?\n");
+
+		if (startWert < grenzWert) {
+
+			System.out.println("Schon zu Beginn liegt der Startwert unter dem Grenzwert.");
+		} else {
+
+			double aktuWert = startWert;
+			int hwz = 0;
+
+			while (aktuWert >= grenzWert) {
+
+				aktuWert /= 2.0;
+				hwz++;
+				System.out.println("Nach " + hwz + " HWZ: " + aktuWert);
+			}
+			System.out.println("\nAntwort: Nach " + hwz + " HWZ(s) sinkt die Menge \nerstmals unter den Grenzwert.");
+		}
+	}
+}
+
+//***************************************************************************************************************
+
+public class RadioaktiverZerfallV3 {
+	/*
+	 * Aufgaben: 3. Prüfen Sie, ob hier ein Umwandlung in eine do-while-Schleife
+	 * sinnvoll ist. Falls ja, wandeln Sie um u. überzeugen Sie sich davon, dass das
+	 * Ergebnis gleich bleibt. Was ist der Vorteil der dritten Version?
+	 */
+
+	public static void main(String[] args) {
+
+		double startWert = 1.0;
+		double grenzWert = 0.1;
+
+		System.out
+				.println("Frage: Wie viele Halbwertszeiten vergehen, \nbis die Menge unter " + grenzWert + " sinkt?\n");
+
+		if (startWert < grenzWert) {
+
+			System.out.println("Schon zu Beginn liegt der Startwert unter dem Grenzwert.");
+
+		} else {
+			double aktuWert = startWert;
+			int hwz = 0;
+
+			do {
+				aktuWert /= 2.0;
+				hwz++;
+				System.out.println("Nach " + hwz + " HWZ: " + aktuWert);
+			} while (aktuWert >= grenzWert);
+
+			System.out.println("\nAntwort: Nach " + hwz + " HWZ(s) sinkt die Menge \nerstmals unter den Grenzwert.");
+		}
+	}
+}
